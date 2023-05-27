@@ -33,41 +33,117 @@ public class Addproduct extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         productidtxt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        productidtxt1 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        productidtxt2 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        productidtxt3 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel10 = new javax.swing.JLabel();
+        productidtxt4 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        productidtxt5 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(25, 118, 221));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 630));
-
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(199, 226, 255));
-        jLabel1.setText("Product Name");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, -1, -1));
-        jPanel1.add(productidtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 280, 40));
+        jLabel1.setText("Product Image");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 260, -1, -1));
+
+        productidtxt.setBorder(null);
+        jPanel1.add(productidtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 200, 300, 40));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(199, 226, 255));
         jLabel2.setText("Product ID");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 630));
+        jLabel3.setForeground(new java.awt.Color(102, 255, 255));
+        jLabel3.setText("___________________________________________");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(802, 225, -1, -1));
+
+        productidtxt1.setBorder(null);
+        jPanel1.add(productidtxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 300, 40));
+
+        jLabel4.setForeground(new java.awt.Color(102, 255, 255));
+        jLabel4.setText("___________________________________________");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 84, 310, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(199, 226, 255));
+        jLabel5.setText("Product Name");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, -1, -1));
+
+        productidtxt2.setBorder(null);
+        jPanel1.add(productidtxt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 300, 40));
+
+        jLabel6.setForeground(new java.awt.Color(102, 255, 255));
+        jLabel6.setText("___________________________________________");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 164, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(199, 226, 255));
+        jLabel7.setText("Product Category");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, -1, -1));
+
+        productidtxt3.setBorder(null);
+        jPanel1.add(productidtxt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 300, 40));
+
+        jLabel8.setForeground(new java.awt.Color(102, 255, 255));
+        jLabel8.setText("___________________________________________");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 245, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(199, 226, 255));
+        jLabel9.setText("Product Quantity");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, -1, -1));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 60, 300, -1));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(199, 226, 255));
+        jLabel10.setText("Product Short Description");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 30, -1, -1));
+
+        productidtxt4.setBorder(null);
+        jPanel1.add(productidtxt4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 290, 300, 40));
+
+        jLabel11.setForeground(new java.awt.Color(102, 255, 255));
+        jLabel11.setText("___________________________________________");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(802, 315, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(199, 226, 255));
+        jLabel12.setText("Product Price");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 170, -1, -1));
+
+        productidtxt5.setBorder(null);
+        jPanel1.add(productidtxt5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 300, 300, 40));
+
+        jLabel13.setForeground(new java.awt.Color(102, 255, 255));
+        jLabel13.setText("___________________________________________");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 325, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 1160, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -75,9 +151,26 @@ public class Addproduct extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField productidtxt;
+    private javax.swing.JTextField productidtxt1;
+    private javax.swing.JTextField productidtxt2;
+    private javax.swing.JTextField productidtxt3;
+    private javax.swing.JTextField productidtxt4;
+    private javax.swing.JTextField productidtxt5;
     // End of variables declaration//GEN-END:variables
 }
