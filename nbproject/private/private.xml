@@ -4,18 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/MyProject/src/activity/login.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/MyProject/src/activity/signup.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/MyProject/src/adminInternalFrame/productList.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/MyProject/src/design/Header.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/MyProject/src/internalFrame/productmenu.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/MyProject/src/admin/adminDashboard.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/MyProject/src/design/productitem.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/MyProject/src/activity/splash.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/MyProject/src/Database/dbcon.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/MyProject/src/internalFrame/homescreen.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/MyProject/src/activity/MainActivity.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/MyProject/src/adminInternalFrame/productList.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/MyProject/src/activity/signup.java</file>
             <file>file:/C:/Users/User/Documents/NetBeansProjects/MyProject/src/adminInternalFrame/Addproduct.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/MyProject/src/design/adminHeader.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/MyProject/src/admin/adminDashboard.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/MyProject/src/Database/dbModel.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/MyProject/src/Database/dbcon.java</file>
         </group>
     </open-files>
 </project-private>

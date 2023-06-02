@@ -3,6 +3,7 @@ package admin;
 
 
 
+import adminInternalFrame.Addproduct;
 import adminInternalFrame.productList;
 import design.adminHeader;
 
@@ -36,7 +37,14 @@ public class adminDashboard extends javax.swing.JFrame {
                            admindesktop.removeAll();
                            admindesktop.add(proList);
                            proList.setVisible(true);
+                           drawer.hide();
                            
+                        }else if(index==1){
+                            Addproduct addproduct=new Addproduct();
+                            admindesktop.removeAll();
+                            admindesktop.add(addproduct);
+                            addproduct.setVisible(true);
+                             drawer.hide();
                         }
                         
                     }
@@ -85,6 +93,8 @@ public class adminDashboard extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 70));
+
+        admindesktop.setBackground(new java.awt.Color(255, 102, 204));
 
         javax.swing.GroupLayout admindesktopLayout = new javax.swing.GroupLayout(admindesktop);
         admindesktop.setLayout(admindesktopLayout);

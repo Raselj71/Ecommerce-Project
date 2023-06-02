@@ -102,7 +102,6 @@ public class login extends javax.swing.JFrame {
         jLabel5.setText("Username");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 169, 510, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 255, 255));
         jLabel6.setText("______________________________________________________________________________");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 214, 390, -1));
@@ -119,7 +118,6 @@ public class login extends javax.swing.JFrame {
 
         jLabel10.setForeground(new java.awt.Color(153, 255, 255));
         jLabel10.setText("________________________________________________________");
-        jLabel10.setBorder(null);
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 294, -1, -1));
 
         hidepass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/invisible.png"))); // NOI18N
