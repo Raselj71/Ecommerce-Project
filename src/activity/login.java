@@ -246,6 +246,7 @@ public class login extends javax.swing.JFrame {
              java.sql.ResultSet rs    =   dbconnect.s.executeQuery(loginQuery);
              
             while(rs.next()){
+                  JOptionPane.showMessageDialog(null, "login Successfull");
                 String name=rs.getString("name");
                 String phone=rs.getString("number");
                 String gender=rs.getString("gender");
@@ -253,7 +254,7 @@ public class login extends javax.swing.JFrame {
                 MainActivity mainActivity=new MainActivity(name, phone, gender, email);
                 mainActivity.setVisible(true);
                 dispose();
-                
+              
                // System.out.println("Name:"+name+ "\n" + "phone:"+phone);
             }
              
@@ -261,7 +262,7 @@ public class login extends javax.swing.JFrame {
              
             
              
-             JOptionPane.showMessageDialog(null, "login Successfull");
+             
             
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Incorrect Email and Password");

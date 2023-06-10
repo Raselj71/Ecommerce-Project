@@ -1,19 +1,79 @@
 
 package internalFrame;
 
+import Database.dbcon;
+import design.ItemHolder;
+import java.awt.Image;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 
 public class homescreen extends javax.swing.JInternalFrame {
 
-    
+   
     public homescreen() {
+      
+      
+       
         
         setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI UI = (BasicInternalFrameUI) getUI();
         UI.setNorthPane(null);
-        initComponents();
+        initComponents(); 
+        
+         dbcon data=new  dbcon();
+        String selectQuery="SELECT * FROM `product`";
+        java.sql.ResultSet rs;
+        try {
+            rs = data.s.executeQuery(selectQuery);
+            while (rs.next()) {
+                String id = rs.getString("id");
+                String proname = rs.getString("product_name");
+                String price = rs.getString("price");
+                String image = rs.getString("picture");
+
+                try {
+                    URL url = new URL(image);
+
+                    Image product_image = ImageIO.read(url);
+
+                    ImageIcon icon = new ImageIcon(product_image);
+
+                    ItemHolder item = new ItemHolder(icon, proname, price, id);
+
+                    productPanel.add(item);
+
+                } catch (MalformedURLException ex) {
+                    Logger.getLogger(homescreen.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                    Logger.getLogger(homescreen.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+
+        }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(homescreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+      
+        
+      
+       
+        for(int i=0; i<1000;i++){
+           // ItemHolder item=new ItemHolder();
+         //  productPanel.add(item);
+        }
+      
+        
     }
 
     /**
@@ -25,36 +85,27 @@ public class homescreen extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        productPanel = new javax.swing.JPanel();
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
+        setAutoscrolls(true);
+        setMinimumSize(new java.awt.Dimension(2560, 650));
+        setPreferredSize(new java.awt.Dimension(1280, 650));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 422, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 421, Short.MAX_VALUE)
-        );
+        productPanel.setLayout(new java.awt.GridLayout(0, 5, 10, 10));
+        jScrollPane1.setViewportView(productPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(475, 475, 475)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(371, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1294, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -62,6 +113,7 @@ public class homescreen extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel productPanel;
     // End of variables declaration//GEN-END:variables
 }

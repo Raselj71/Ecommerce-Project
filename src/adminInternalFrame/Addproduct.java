@@ -30,6 +30,8 @@ public class Addproduct extends javax.swing.JInternalFrame {
          productshorttxt.setBackground(new Color(0,0,0,1));
          productpricetxt.setBackground(new Color(0,0,0,1));
          productimgtxt.setBackground(new Color(0,0,0,1));
+         
+         
         
            setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI UI = (BasicInternalFrameUI) getUI();
@@ -59,8 +61,6 @@ public class Addproduct extends javax.swing.JInternalFrame {
         productcategorytxt = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        productshorttxt = new javax.swing.JTextArea();
         jLabel10 = new javax.swing.JLabel();
         productimgtxt = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -70,6 +70,7 @@ public class Addproduct extends javax.swing.JInternalFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         addproductbtn = new javax.swing.JButton();
+        productshorttxt = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(1280, 660));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -138,13 +139,6 @@ public class Addproduct extends javax.swing.JInternalFrame {
         jLabel9.setText("Product Quantity");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, -1, -1));
 
-        productshorttxt.setColumns(20);
-        productshorttxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        productshorttxt.setRows(5);
-        jScrollPane1.setViewportView(productshorttxt);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 140, 300, -1));
-
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(199, 226, 255));
         jLabel10.setText("Product Short Description");
@@ -198,6 +192,12 @@ public class Addproduct extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(addproductbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 480, 460, 50));
+
+        productshorttxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        productshorttxt.setForeground(new java.awt.Color(255, 255, 255));
+        productshorttxt.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        productshorttxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jPanel1.add(productshorttxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 140, 300, 100));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1290, 660));
 
@@ -285,13 +285,12 @@ public class Addproduct extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField productcategorytxt;
     private javax.swing.JTextField productidtxt;
     private javax.swing.JTextField productimgtxt;
     private javax.swing.JTextField productnametxt;
     private javax.swing.JTextField productpricetxt;
     private javax.swing.JTextField productquantitytxt;
-    private javax.swing.JTextArea productshorttxt;
+    private javax.swing.JTextField productshorttxt;
     // End of variables declaration//GEN-END:variables
 }

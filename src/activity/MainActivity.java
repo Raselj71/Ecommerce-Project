@@ -3,8 +3,13 @@ package activity;
 
 import internalFrame.productmenu;
 import design.Header;
+import design.ItemHolder;
+
 import internalFrame.homescreen;
 import java.awt.Color;
+import java.awt.DisplayMode;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import javaswingdev.drawer.Drawer;
 import javaswingdev.drawer.DrawerController;
 import javaswingdev.drawer.DrawerItem;
@@ -12,6 +17,7 @@ import javaswingdev.drawer.EventDrawer;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 
 
 public class MainActivity extends javax.swing.JFrame {
@@ -35,6 +41,7 @@ public class MainActivity extends javax.swing.JFrame {
         drawer=Drawer.newDrawer(this)
                 .header(new Header(name))
                 .separator(2, new Color(90,90,90))
+                .addChild(new DrawerItem("Product").icon(new ImageIcon(getClass().getResource("/photos/usermenu.png"))).build())
                .addChild(new DrawerItem("Account Informaton").icon(new ImageIcon(getClass().getResource("/photos/usermenu.png"))).build())
                 .addFooter(new DrawerItem("Exit").icon(new ImageIcon(getClass().getResource("/photos/exitbutton.png"))).build())
                
@@ -42,11 +49,17 @@ public class MainActivity extends javax.swing.JFrame {
                     @Override
                     public void selected(int index, DrawerItem item) {
                         if (index==0) {
-                           productmenu product=new productmenu();
-                           desktop.removeAll();
-                           desktop.add(product);
-                           product.setVisible(true);
-                           
+                            homescreen home = new homescreen();
+                            desktop.removeAll();
+                            desktop.add(home);
+                            home.setVisible(true);
+                        }else if(index==1){
+                          productmenu menu=new productmenu();
+                          desktop.removeAll();
+                          desktop.add(menu);
+                          menu.setVisible(true);
+                        }else if(index==2){
+                         dispose();
                         }
                         
                     }
@@ -66,6 +79,7 @@ public class MainActivity extends javax.swing.JFrame {
         menubtn = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         nametxt = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         desktop = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -93,9 +107,12 @@ public class MainActivity extends javax.swing.JFrame {
         nametxt.setText("jLabel2");
         navigationPanel.add(nametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 20, 240, 30));
 
-        getContentPane().add(navigationPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 80));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        navigationPanel.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 120, 20));
 
-        desktop.setBackground(new java.awt.Color(51, 102, 255));
+        getContentPane().add(navigationPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 70));
+
+        desktop.setBackground(new java.awt.Color(0, 102, 102));
 
         javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
         desktop.setLayout(desktopLayout);
@@ -105,10 +122,10 @@ public class MainActivity extends javax.swing.JFrame {
         );
         desktopLayout.setVerticalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
+            .addGap(0, 660, Short.MAX_VALUE)
         );
 
-        getContentPane().add(desktop, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1280, 650));
+        getContentPane().add(desktop, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1280, 660));
 
         pack();
         setLocationRelativeTo(null);
@@ -154,20 +171,21 @@ public class MainActivity extends javax.swing.JFrame {
         });
     }
 
-    void desktopmenuadd(){
-        homescreen home=new homescreen();
-        
-        desktop.removeAll();
-        desktop.add(home);
-        home.setVisible(true);
-        
-    }
+   
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane desktop;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel menubtn;
     private javax.swing.JLabel nametxt;
     private javax.swing.JPanel navigationPanel;
     // End of variables declaration//GEN-END:variables
+
+    private void desktopmenuadd() {
+       homescreen home=new homescreen();
+       desktop.removeAll();
+       desktop.add(home);
+       home.setVisible(true);
+    }
 }
