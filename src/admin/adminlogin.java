@@ -1,8 +1,7 @@
-package activity;
+package admin;
 
 
 import Database.dbcon;
-import admin.adminlogin;
 
 
 import java.awt.Color;
@@ -13,10 +12,10 @@ import javax.swing.JOptionPane;
 
 
 
-public class login extends javax.swing.JFrame {
+public class adminlogin extends javax.swing.JFrame {
 
  
-    public login() {
+    public adminlogin() {
         initComponents();
         usernametxt.setBackground(new Color(0,0,0,1));
         passwordtxt.setBackground(new Color(0,0,0,1));
@@ -46,12 +45,9 @@ public class login extends javax.swing.JFrame {
         remcheckbox = new javax.swing.JCheckBox();
         forgetpasslabel = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
-        signuplabel = new javax.swing.JLabel();
         usernametxt = new javax.swing.JTextField();
         passwordtxt = new javax.swing.JPasswordField();
         showpass = new javax.swing.JLabel();
-        adminloginbtn = new javax.swing.JLabel();
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/invisible.png"))); // NOI18N
         jLabel16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -90,7 +86,7 @@ public class login extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 38)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Login");
+        jLabel3.setText("Admin Login");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 70, 598, 57));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
@@ -105,7 +101,7 @@ public class login extends javax.swing.JFrame {
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 169, 510, -1));
 
         jLabel6.setForeground(new java.awt.Color(102, 255, 255));
-        jLabel6.setText("______________________________________________________________________________");
+        jLabel6.setText("___________________________________________________________________________");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 214, 390, -1));
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 241, -1, 28));
 
@@ -156,24 +152,6 @@ public class login extends javax.swing.JFrame {
         });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 364, 442, 45));
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(199, 226, 255));
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel13.setText("Don't have an account?");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 441, 290, -1));
-
-        signuplabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        signuplabel.setForeground(new java.awt.Color(255, 255, 255));
-        signuplabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        signuplabel.setText("Sign Up");
-        signuplabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        signuplabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                signuplabelMouseClicked(evt);
-            }
-        });
-        jPanel2.add(signuplabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 441, 146, -1));
-
         usernametxt.setFont(usernametxt.getFont().deriveFont(usernametxt.getFont().getSize()+4f));
         usernametxt.setForeground(new java.awt.Color(255, 255, 255));
         usernametxt.setBorder(null);
@@ -197,17 +175,6 @@ public class login extends javax.swing.JFrame {
             }
         });
         jPanel2.add(showpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, -1, 37));
-
-        adminloginbtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        adminloginbtn.setForeground(new java.awt.Color(255, 255, 255));
-        adminloginbtn.setText("Admin Login");
-        adminloginbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        adminloginbtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                adminloginbtnMouseClicked(evt);
-            }
-        });
-        jPanel2.add(adminloginbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 610, 580));
 
@@ -255,18 +222,17 @@ public class login extends javax.swing.JFrame {
         try {
             
            
-             String loginQuery="SELECT *FROM signup WHERE email='"+email+"' AND password='"+password+"'";
+             String loginQuery="SELECT *FROM admin WHERE email='"+email+"' AND password='"+password+"'";
              java.sql.ResultSet rs    =   dbconnect.s.executeQuery(loginQuery);
              
             while(rs.next()){
                   JOptionPane.showMessageDialog(null, "login Successfull");
                 String name=rs.getString("name");
                 String phone=rs.getString("number");
-                String gender=rs.getString("gender");
-                String address=rs.getString("address");
+               // String gender=rs.getString("gender");
                 
-                MainActivity mainActivity=new MainActivity(name, phone, gender, email,address);
-                mainActivity.setVisible(true);
+                adminDashboard admind=new adminDashboard();
+                admind.setVisible(true);
                 dispose();
               
                // System.out.println("Name:"+name+ "\n" + "phone:"+phone);
@@ -279,7 +245,8 @@ public class login extends javax.swing.JFrame {
              
             
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Incorrect Email and Password");
+            System.out.println(e);
+            //JOptionPane.showMessageDialog(null, "Incorrect Email and Password");
         }
         
         
@@ -289,19 +256,6 @@ public class login extends javax.swing.JFrame {
     private void usernametxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernametxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usernametxtActionPerformed
-
-    private void signuplabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signuplabelMouseClicked
-        signup s=new signup();
-        s.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_signuplabelMouseClicked
-
-    private void adminloginbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminloginbtnMouseClicked
-        // TODO add your handling code here:
-         adminlogin s=new adminlogin();
-        s.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_adminloginbtnMouseClicked
 
    
     public static void main(String args[]) {
@@ -319,31 +273,29 @@ public class login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adminlogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adminlogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adminlogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adminlogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
        
        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               new login().setVisible(true);
+               new adminlogin().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel adminloginbtn;
     private javax.swing.JLabel forgetpasslabel;
     private javax.swing.JLabel hidepass;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -358,7 +310,6 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JPasswordField passwordtxt;
     private javax.swing.JCheckBox remcheckbox;
     private javax.swing.JLabel showpass;
-    private javax.swing.JLabel signuplabel;
     private javax.swing.JTextField usernametxt;
     // End of variables declaration//GEN-END:variables
 }

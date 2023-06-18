@@ -5,14 +5,19 @@ import activity.loading;
 import activity.productDetails;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.util.HashMap;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import internalFrame.productCart;
 
 
 public class ItemHolder extends javax.swing.JPanel {
 
     String product_id;
+    ImageIcon proImage;
+    String product_name;
+    String product_price;
     public ItemHolder(ImageIcon image, String Product_name, String product_price, String product_id) {
         initComponents();
         setSize(295, 381);
@@ -25,6 +30,10 @@ public class ItemHolder extends javax.swing.JPanel {
         pricetxt.setText(product_price+" ৳");
         productNametxt.setText(Product_name);
         this.product_id=product_id;
+        this.proImage=image;
+        this.product_name=Product_name;
+        this.product_price=product_price;
+        
     }
 
   
@@ -78,7 +87,7 @@ public class ItemHolder extends javax.swing.JPanel {
         buybutton.setBackground(new java.awt.Color(0, 0, 204));
         buybutton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         buybutton.setForeground(new java.awt.Color(255, 255, 255));
-        buybutton.setText("Buy Now");
+        buybutton.setText("Add to Cart");
         buybutton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 buybuttonMouseClicked(evt);
@@ -98,7 +107,12 @@ public class ItemHolder extends javax.swing.JPanel {
     }//GEN-LAST:event_buybuttonActionPerformed
 
     private void buybuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buybuttonMouseClicked
-      
+         productCart.hashMap =new HashMap<>();
+         productCart.hashMap.put("product_id", product_id);
+          productCart.hashMap.put("product_title", product_name);
+           productCart.hashMap.put("product_price", product_price);
+           productCart.cartList.add(productCart.hashMap);
+           JOptionPane.showMessageDialog(null, "Product added to your cart");
     }//GEN-LAST:event_buybuttonMouseClicked
 
     private void productImageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productImageMouseClicked

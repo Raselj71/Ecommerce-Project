@@ -4,6 +4,15 @@
  */
 package adminInternalFrame;
 
+import Database.dbcon;
+import java.awt.Color;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
+
 /**
  *
  * @author User
@@ -15,6 +24,11 @@ public class RemoveProduct extends javax.swing.JInternalFrame {
      */
     public RemoveProduct() {
         initComponents();
+        setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+        BasicInternalFrameUI UI = (BasicInternalFrameUI) getUI();
+        UI.setNorthPane(null);
+        
+        productidtxt.setBackground(new Color(0,0,0,1));
     }
 
     /**
@@ -27,78 +41,130 @@ public class RemoveProduct extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        productid = new javax.swing.JTextField();
+        productidtxt = new javax.swing.JTextField();
+        deletebtn = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/deleteimg.jpg"))); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(153, 0, 51));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Remove Product");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 777, 58));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Enter Product ID");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 193, 415, 60));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 172, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(productid)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(133, 133, 133))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(137, 137, 137)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(productid, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(272, Short.MAX_VALUE))
-        );
+        productidtxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        productidtxt.setForeground(new java.awt.Color(255, 255, 255));
+        productidtxt.setBorder(null);
+        productidtxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                productidtxtActionPerformed(evt);
+            }
+        });
+        jPanel2.add(productidtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 415, 50));
+
+        deletebtn.setBackground(new java.awt.Color(0, 102, 204));
+        deletebtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        deletebtn.setForeground(new java.awt.Color(255, 255, 255));
+        deletebtn.setText("Delete Product");
+        deletebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deletebtnActionPerformed(evt);
+            }
+        });
+        jPanel2.add(deletebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 270, 50));
+
+        jLabel3.setForeground(new java.awt.Color(102, 255, 255));
+        jLabel3.setText("__________________________________________________________________________________");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 285, 420, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 550, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 802, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 1270, 640));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 1300, 680));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void productidtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productidtxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_productidtxtActionPerformed
+
+    private void deletebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebtnActionPerformed
+        // TODO add your handling code here:
+        
+        String id=productidtxt.getText();
+        if(id.equals("")){
+            JOptionPane.showMessageDialog(null, "Please enter product ID");
+            return;
+        }
+        String deleteQuery="DELETE FROM `product` WHERE id='"+id+"';";
+        dbcon db=new dbcon();
+        try {
+            int choice=JOptionPane.showConfirmDialog(null, "Do you want to delete this product", "Title", JOptionPane.YES_NO_OPTION);
+            if(choice==JOptionPane.YES_OPTION){
+                int update=db.s.executeUpdate(deleteQuery);
+                
+                if(update>0){
+                  JOptionPane.showMessageDialog(null, "Delete Successfully!");  
+                }else{
+                    JOptionPane.showMessageDialog(null, "No product found with the specified ID");
+                }
+               
+            }else{
+                
+            }
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Please Enter valid ID");
+            Logger.getLogger(RemoveProduct.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_deletebtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton deletebtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField productid;
+    private javax.swing.JTextField productidtxt;
     // End of variables declaration//GEN-END:variables
 }

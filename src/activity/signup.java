@@ -9,15 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 
-/**
- *
- * @author User
- */
 public class signup extends javax.swing.JFrame {
 
   
@@ -61,12 +53,14 @@ public class signup extends javax.swing.JFrame {
         signupbutton = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        addrtxt = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1130, 580));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -75,57 +69,57 @@ public class signup extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(199, 226, 255));
-        jLabel1.setText("Password");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 340, -1));
+        jLabel1.setText("Address");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 340, -1));
 
         jLabel2.setForeground(new java.awt.Color(51, 255, 255));
         jLabel2.setText("____________________________________________________");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 375, 370, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 385, 370, -1));
 
         phonetxt.setFont(phonetxt.getFont().deriveFont(phonetxt.getFont().getSize()+3f));
         phonetxt.setForeground(new java.awt.Color(255, 255, 255));
         phonetxt.setBorder(null);
-        jPanel1.add(phonetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 370, 40));
+        jPanel1.add(phonetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 370, 40));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(199, 226, 255));
         jLabel3.setText("Full Name");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 340, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 340, -1));
 
         nametxt.setFont(nametxt.getFont().deriveFont(nametxt.getFont().getSize()+3f));
         nametxt.setForeground(new java.awt.Color(255, 255, 255));
         nametxt.setBorder(null);
-        jPanel1.add(nametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 95, 370, 40));
+        jPanel1.add(nametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 370, 40));
 
         jLabel4.setForeground(new java.awt.Color(51, 255, 255));
         jLabel4.setText("____________________________________________________");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 120, 400, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 400, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(199, 226, 255));
         jLabel5.setText("Email");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 340, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 340, -1));
 
         emailtxt.setFont(emailtxt.getFont().deriveFont(emailtxt.getFont().getSize()+3f));
         emailtxt.setForeground(new java.awt.Color(255, 255, 255));
         emailtxt.setBorder(null);
-        jPanel1.add(emailtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 370, 40));
+        jPanel1.add(emailtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 370, 40));
 
         jLabel6.setForeground(new java.awt.Color(51, 255, 255));
         jLabel6.setText("____________________________________________________");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 195, 370, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 135, 370, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(199, 226, 255));
         jLabel7.setText("Gender");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 60, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 60, -1));
 
         buttonGroup1.add(femalecheckbox);
         femalecheckbox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         femalecheckbox.setForeground(new java.awt.Color(255, 255, 255));
         femalecheckbox.setText("Female");
         femalecheckbox.setBorder(null);
-        jPanel1.add(femalecheckbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, -1));
+        jPanel1.add(femalecheckbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, -1, -1));
 
         buttonGroup1.add(malecheckbox);
         malecheckbox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -137,21 +131,21 @@ public class signup extends javax.swing.JFrame {
                 malecheckboxActionPerformed(evt);
             }
         });
-        jPanel1.add(malecheckbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, -1, -1));
+        jPanel1.add(malecheckbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(199, 226, 255));
         jLabel8.setText("Phone Number");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 212, 340, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 340, -1));
 
         passwordtxt.setFont(new java.awt.Font("sansserif", 0, 15)); // NOI18N
         passwordtxt.setForeground(new java.awt.Color(255, 255, 255));
         passwordtxt.setBorder(null);
-        jPanel1.add(passwordtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 370, 40));
+        jPanel1.add(passwordtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 370, 40));
 
         jLabel9.setForeground(new java.awt.Color(51, 255, 255));
         jLabel9.setText("____________________________________________________");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 265, 370, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 205, 370, -1));
 
         signupbutton.setBackground(new java.awt.Color(199, 226, 255));
         signupbutton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -162,7 +156,7 @@ public class signup extends javax.swing.JFrame {
                 signupbuttonActionPerformed(evt);
             }
         });
-        jPanel1.add(signupbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 370, 40));
+        jPanel1.add(signupbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 370, 40));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -179,6 +173,18 @@ public class signup extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Already have an account?");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 530, 220, -1));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(199, 226, 255));
+        jLabel13.setText("Password");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 340, -1));
+
+        addrtxt.setBorder(null);
+        jPanel1.add(addrtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 370, 40));
+
+        jLabel14.setForeground(new java.awt.Color(51, 255, 255));
+        jLabel14.setText("____________________________________________________");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 315, 370, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 590, 580));
 
@@ -219,6 +225,7 @@ public class signup extends javax.swing.JFrame {
        String email=emailtxt.getText();
        String phone=phonetxt.getText();
        String password=passwordtxt.getText();
+       String address=addrtxt.getText();
         if (malecheckbox.isSelected()) {
             gender="male";
         }else if (femalecheckbox.isSelected()) {
@@ -244,12 +251,16 @@ public class signup extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Enter Your Password");
             return;
         }
+         if (address.equals("")) {
+            JOptionPane.showMessageDialog(null, "Enter Your Address");
+            return;
+        }
         
-        String sigupQuery="INSERT INTO `signup` (`name`, `email`, `number`, `gender`, `password`) VALUES ('"+name+"', '"+email+"', '"+phone+"', '"+gender+"', '"+password+"');";
+        String sigupQuery="INSERT INTO `signup` (`name`, `email`, `number`, `gender`, `password`,`address`) VALUES ('"+name+"', '"+email+"', '"+phone+"', '"+gender+"', '"+password+"','"+address+"');";
         try {
              c.s.executeUpdate(sigupQuery);
             JOptionPane.showMessageDialog(null, "Registration Successfully");
-             MainActivity mainActivity=new MainActivity(name, phone, gender, email);
+             MainActivity mainActivity=new MainActivity(name, phone, gender, email,address);
                 mainActivity.setVisible(true);
                 dispose();
         } catch (SQLException ex) {
@@ -285,6 +296,9 @@ public class signup extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(signup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -295,6 +309,7 @@ public class signup extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField addrtxt;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField emailtxt;
     private javax.swing.JCheckBox femalecheckbox;
@@ -302,6 +317,8 @@ public class signup extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

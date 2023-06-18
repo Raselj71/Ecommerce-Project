@@ -4,6 +4,7 @@ package admin;
 
 
 import adminInternalFrame.Addproduct;
+import adminInternalFrame.RemoveProduct;
 import adminInternalFrame.productList;
 import design.adminHeader;
 
@@ -45,6 +46,16 @@ public class adminDashboard extends javax.swing.JFrame {
                             admindesktop.add(addproduct);
                             addproduct.setVisible(true);
                              drawer.hide();
+                        }else if(index==2){
+                            RemoveProduct removeProduct=new RemoveProduct();
+                            admindesktop.removeAll();
+                            admindesktop.add(removeProduct);
+                            removeProduct.setVisible(true);
+                            drawer.hide();
+                            
+                        }else if(index==3){
+                            dispose();
+                            
                         }
                         
                     }
