@@ -1,12 +1,20 @@
 
 package internalFrame;
 
+import Database.dbcon;
+import activity.login;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 
 public class account_information extends javax.swing.JInternalFrame {
 
+      public  String UserNumber;
+      dbcon databasecon=new dbcon();
    
     public account_information(String name, String number, String email, String gender, String address) {
         initComponents();
@@ -19,6 +27,8 @@ public class account_information extends javax.swing.JInternalFrame {
         emailtxt.setText("Email : "+ email);
         gendertxt.setText("Gender : "+ gender);
         adrtxt.setText("Address : "+address);
+        UserNumber=number;
+        System.out.println(number);
     }
 
    
@@ -33,6 +43,7 @@ public class account_information extends javax.swing.JInternalFrame {
         adrtxt = new javax.swing.JLabel();
         numbertxt = new javax.swing.JLabel();
         gendertxt = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(1280, 650));
@@ -73,6 +84,15 @@ public class account_information extends javax.swing.JInternalFrame {
         gendertxt.setText("Gender : Male");
         jPanel1.add(gendertxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 415, 36));
 
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setText("Delete Your Profile");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 565, 460, 40));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 620));
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
@@ -93,11 +113,27 @@ public class account_information extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         String query="DELETE FROM signup WHERE number="+UserNumber+"";
+        int option= JOptionPane.showConfirmDialog(null, "Do you want to delete your Profile?","YES",JOptionPane.YES_NO_OPTION);
+         if(option==JOptionPane.YES_OPTION){
+             try {
+                 databasecon.s.executeUpdate(query);
+                 JOptionPane.showMessageDialog(null, "Delete Successfully");
+                 dispose();
+                 login log=new login();
+             } catch (SQLException ex) {
+                 Logger.getLogger(account_information.class.getName()).log(Level.SEVERE, null, ex);
+             }
+         }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel adrtxt;
     private javax.swing.JLabel emailtxt;
     private javax.swing.JLabel gendertxt;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -21,6 +21,7 @@ public class signup extends javax.swing.JFrame {
         nametxt.setBackground(new Color(0,0,0,1));
         emailtxt.setBackground(new Color(0,0,0,1));
         passwordtxt.setBackground(new Color(0,0,0,1));
+        addrtxt.setBackground(new Color(0,0,0,1));
         
     }
 
